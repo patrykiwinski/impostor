@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impostor Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Impostor</h1>
+
+      <section id="setup-screen" class="card">
+        <h2>Ustawienia gry</h2>
+
+        <label>Wybrane kategorie</label>
+        <p id="wybraneKategorieInfo" class="wybrane-kategorie-info"></p>
+
+        <label for="playersInput">Liczba graczy</label>
+        <input id="playersInput" type="number" inputmode="numeric" min="3" max="20" step="1" value="4" />
+
+        <label for="impostorsInput">Liczba impostorów</label>
+        <input id="impostorsInput" type="number" inputmode="numeric" min="1" max="3" step="1" value="1" />
+
+        <div class="switch-row">
+          <span>Impostor widzi kategorię</span>
+          <label class="switch">
+            <input id="impostorCategorySwitch" type="checkbox" checked />
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+
+        <div class="switch-row">
+          <span>Impostor widzi podpowiedź</span>
+          <label class="switch">
+            <input id="impostorHintSwitch" type="checkbox" checked />
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+
+        <button id="startBtn" type="button">Start gry</button>
+        <button id="endSessionBtn" type="button">Koniec sesji</button>
+        <p id="setupError" class="error"></p>
+      </section>
+
+      <section id="player-screen" class="card hidden">
+        <h2 id="playerTitle">Gracz 1</h2>
+        <p class="subtitle">Przeciągnij blok w górę, puść i odkryj</p>
+
+        <div id="secretCard" class="secret-card">
+          <div id="sekretTekst" class="sekret-tekst"></div>
+          <div id="zaslonaKarty" class="zaslona-karty">Przeciągnij w górę</div>
+        </div>
+        <button id="nextBtn" type="button" class="hidden">Następny gracz</button>
+      </section>
+
+      <section id="end-screen" class="card hidden">
+        <h2>Koniec rozdawania haseł</h2>
+        <p>Wszyscy gracze zobaczyli swoje role.</p>
+        <button id="restartBtn" type="button">Zagraj ponownie</button>
+      </section>
+    </main>
+    <button id="openKategorieBtn" type="button" class="kategorie-dol-btn">Kategorie</button>
+
+    <div id="kategorieOverlay" class="kategorie-overlay hidden"></div>
+    <aside id="kategorieSheet" class="kategorie-sheet hidden" aria-label="Lista kategorii">
+      <div class="kategorie-sheet-head">
+        <h3>Kategorie</h3>
+        <button id="closeKategorieBtn" type="button">Gotowe</button>
+      </div>
+      <div id="listaKategorii" class="lista-kategorii"></div>
+      <div class="kategorie-sheet-actions">
+        <button id="zaznaczWszystkieBtn" type="button">Zaznacz wszystkie</button>
+        <button id="wyczyscKategorieBtn" type="button">Wyczyść</button>
+      </div>
+    </aside>
+
+    <script src="app.js"></script>
+  </body>
+</html>

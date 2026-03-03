@@ -1,0 +1,150 @@
+{
+  "categories": [
+    {
+      "name": "Marki",
+      "entries": [
+        { "word": "Apple", "hints": ["biel", "telefon"] },
+        { "word": "Samsung", "hints": ["galaktyka", "korea", "TV"] },
+        { "word": "Nike", "hints": ["swoosh","ubrania", "Drill"] },
+        { "word": "Adidas", "hints": ["Sport","gazelle","gwiazda"] },
+        { "word": "Sony", "hints": ["Animacje", "japonia", "aparat"] },
+        { "word": "Google", "hints": ["4 kolory", "android"] },
+        { "word": "Lego", "hints": ["Zabawka", "kolaboracje", "kreatywność"] },
+        { "word": "IKEA", "hints": ["drewno", "instrukcja"] },
+        { "word": "Tesla", "hints": ["rakieta", "Robot", "gówno"] },
+        { "word": "Microsoft", "hints": ["minecraft", "biuro", "konsola"] },
+        { "word": "Amazon", "hints": ["paczka", "alfabet"] },
+        { "word": "Netflix", "hints": ["usuwanie", "sezony", "TV"] },
+        { "word": "Puma", "hints": ["kot", "sport", "Guma"] }
+      ]
+    },
+    {
+      "name": "Zwierzęta",
+      "entries": [
+        { "word": "Lew", "hints": ["herb", "sawanna", "pazury"] },
+        { "word": "Pingwin", "hints": ["bajka", "kolonia", "poślizg"] },
+        { "word": "Delfin", "hints": ["zatoka", "dziura"] },
+        { "word": "Sowa", "hints": ["noc", "książka", "gałąź"] },
+        { "word": "Wilk", "hints": ["księżyc", "trop", "granica"] },
+        { "word": "Kameleon", "hints": ["dżungla", "zmiana"] },
+        { "word": "Jeż", "hints": ["ogród", "kulka", "jabłko"] },
+        { "word": "Wielbłąd", "hints": ["karawana", "wydma", "Beduin"] }
+      ]
+    },
+    {
+      "name": "Jedzenie",
+      "entries": [
+        { "word": "Pizza", "hints": ["karton", "mąka", "piec"] },
+        { "word": "Sushi", "hints": ["ryba", "kultura", "sos sojowy/soja"] },
+        { "word": "Lody", "hints": ["bita śmietana", "mleko", "Plaża"] },
+        { "word": "Burger", "hints": ["warstwy", "sezam", "grill"] },
+        { "word": "Pierogi", "hints": ["zlepianie", "wrzątek", "ziemniak"] },
+        { "word": "Tiramisu", "hints": ["warstwy", "kakao", "łyżeczka"] },
+        { "word": "Ramen", "hints": ["bulion", "para", "miska"] },
+        { "word": "Naleśniki", "hints": ["patelnia", "zwijanie"] }
+      ]
+    },
+    {
+      "name": "Miejsca",
+      "entries": [
+        { "word": "Plaża", "hints": ["Woda", "na boso", "turyści"] },
+        { "word": "Lotnisko", "hints": ["kontrola", "bomba", "tablica"] },
+        { "word": "Biblioteka", "hints": ["katalog", "wypożyczenie"] },
+        { "word": "Muzeum", "hints": ["Grecja", "wystawa", "audio"] },
+        { "word": "Szpital", "hints": ["dyżur", "opaska", "oddział"] },
+        { "word": "Siłownia", "hints": ["powtórzenia", "szatnia", "seria"] },
+        { "word": "Dworzec", "hints": ["tablica", "odjazd", "walizka"] },
+        { "word": "Kino", "hints": ["fotel", "napisy"] }
+      ]
+    },
+    {
+      "name": "Przedmioty",
+      "entries": [
+        { "word": "Latarka", "hints": ["ciemność", "bateria"] },
+        { "word": "Parasol", "hints": ["deszcz", "uchwyt"] },
+        { "word": "Klucz", "hints": ["Złodziej", "zamek", "kieszeń"] },
+        { "word": "Plecak", "hints": ["suwak", "podróż","szkoła"] },
+        { "word": "Zegarek", "hints": ["tarcza", "klepsydra"] },
+        { "word": "Lustro", "hints": ["odbicie", "rama"] },
+        { "word": "Słuchawki", "hints": ["nauszniki", "kabel", "cisza"] },
+        { "word": "Walizka", "hints": ["kółka", "zamek"] }
+      ]
+    },
+    {
+      "name": "Popkultura",
+      "entries": [
+        { "word": "Superbohater", "hints": ["maska", "komiks", "miasto"] },
+        { "word": "Koncert", "hints": ["roblox", "światła", "tłum"] },
+        { "word": "Serial", "hints": ["killer", "rating"] },
+        { "word": "Mem", "hints": ["szablon", "viral", "tekst","gif"] },
+        { "word": "Podcast", "hints": ["mikrofon", "sen", "słuchawki"] },
+        { "word": "Karaoke", "hints": ["refren", "mikrofon", "tekst"] },
+        { "word": "Cosplay", "hints": ["konwent", "rekwizyt", "postać"] },
+        { "word": "Stand-up", "hints": ["scena", "roast", "publika"] }
+      ]
+    },
+    {
+      "name": "Gry",
+      "entries": [
+        { "word": "Among Us", "hints": ["kosmos", "zadania", "tlen"] },
+        { "word": "League of Legends", "hints": ["linia", "złoto", "mumia"] },
+        { "word": "EA FC", "hints": ["rynek", "rateing", "lootbox"] },
+        { "word": "Counter-Strike", "hints": ["kasyno", "Krowa", "klucz"] },
+        { "word": "Valorant", "hints": ["agent", "Disney", "randka"] },
+        { "word": "The Sims", "hints": [ "dom", "kryształ"] },
+        { "word": "GTA", "hints": ["Łódź podwodna", "otwarty świat", "Samolot"] },
+        { "word": "Roblox", "hints": ["Peak", "avatar", "serwer"] }
+      ]
+    },
+    {
+      "name": "Fortnite",
+      "entries": [
+        { "word": "Battle Bus", "hints": ["okna", "trasa", "podziękowanie"] },
+        { "word": "Burza", "hints": ["zombie", "chmury", "mapa"] },
+        { "word": "Victory Royale", "hints": ["poradzisz sobie ziomek", "złoto", "emotka"] },
+        { "word": "Build Fight", "hints": ["edit", "drewno"] },
+        { "word": "Reboot Van", "hints": ["drużyna", "powrót"] },
+        { "word": "Battle Pass", "hints": ["v-dolce", "sezon"] },
+        { "word": "Zima", "hints": ["nostalgia", "miecz"] },
+        { "word": "banan", "hints": ["hitbox", "piraci"] }
+      ]
+    },
+    {
+      "name": "Zjebane/pikante/wszystko inne",
+      "entries": [
+        { "word": "Czarnuch", "hints": ["kolor", "rower", "Europa"] },
+        { "word": "Epstain", "hints": ["złoto", "sława"] },
+        { "word": "Brainrot", "hints": ["włochy", "komputer"] },
+        { "word": "Wiesław B.", "hints": ["okulary", "szkoła"] },
+        { "word": "Monster", "hints": ["biały", "kaucja"] },
+        { "word": "jeździec na świniach", "hints": ["młot", "kły"] },
+        { "word": "Studniówka", "hints": ["zabawa", "Matura"] },
+        { "word": "Żyd", "hints": ["pieniądze", "Gaz"] },
+        { "word": "Ksiądz", "hints": ["Bogactwo", "kolęda", "dzieci"] },
+        { "word": "Kononowicz", "hints": ["mleko", "Szkolna 17", "sweter"] },
+        { "word": "Social Credit", "hints": ["Chiny", "ryż", "kara"] },
+        { "word": "Femboy", "hints": ["Mięśnie", "spódniczka", "programista"] },
+        { "word": "Discord Mod", "hints": ["waga", "ban"] },
+        { "word": "Alimenty", "hints": ["ucieczka", "komornik", "dziecko"] },
+        { "word": "Bomba", "hints": ["plecak", "lotnisko", "Allah"] },
+        { "word": "ZUS", "hints": ["złodziej", "emerytura", "kolejka"] },
+        { "word": "Flirt", "hints": ["kontakt wzrokowy", "uśmiech", "tekst"] },
+        { "word": "Kajdanki", "hints": ["kontrola","futro"] },
+        { "word": "Gra wstępna", "hints": ["zabawa", "powolny start"] },
+        { "word": "BDSM", "hints": ["granice", "zaufanie"] },
+        { "word": "Randka", "hints": ["kolacja", "ucieczka", "niepewność"] },
+        { "word": "Podglądacz", "hints": ["lornetka", "zboczenie", "obserwacja"] },
+        { "word": "Zboczeniec", "hints": ["przedszkole", "płaszcz"] },
+        { "word": "Fantazja", "hints": ["wyobraźnia", "pragnienie"] },
+        { "word": "Sekret", "hints": ["umowa", "prywatność", "szept"] },
+        { "word": "Chemia", "hints": ["iskra", "wiązanie", "reakcja"] },
+        { "word": "Jan Paweł II", "hints": ["bestia", "suknia"] },
+        { "word": "9/11", "hints": ["Afganistan", "paszport", "paliwo lotnicze"] },
+        { "word": "Czarnobyl", "hints": ["awaria", "strażak"] },
+        { "word": "USA", "hints": ["solarium", "Monster Truck", "orzeł"] },
+        { "word": "Niemcy", "hints": ["Auta", "Cyklon", "autostrada"] }
+
+      ]
+    }
+  ]
+}
