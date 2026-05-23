@@ -110,12 +110,11 @@
       ]
     },
     {
-      "name": "Zjebane/pikante/wszystko inne",
+      "name": "reszta",
       "entries": [
         { "word": "Czarnuch", "hints": ["kolor", "rower", "Europa"] },
         { "word": "Epstain", "hints": ["złoto", "sława"] },
         { "word": "Brainrot", "hints": ["włochy", "komputer"] },
-        { "word": "Wiesław B.", "hints": ["okulary", "szkoła"] },
         { "word": "Monster", "hints": ["biały", "kaucja"] },
         { "word": "jeździec na świniach", "hints": ["młot", "kły"] },
         { "word": "Studniówka", "hints": ["zabawa", "Matura"] },
@@ -142,9 +141,23 @@
         { "word": "9/11", "hints": ["Afganistan", "paszport", "paliwo lotnicze"] },
         { "word": "Czarnobyl", "hints": ["awaria", "strażak"] },
         { "word": "USA", "hints": ["solarium", "Monster Truck", "orzeł"] },
+        { "word": "Titanic", "hints": ["ocean", "bogactwo", "ciśnienie"] },
+        { "word": "Adolf Hitler", "hints": ["malarz", "wąs", "akwarela"] },
+        { "word": "Sierociniec", "hints": ["okno", "cisza", "nowi rodzice"] },
+        { "word": "Eutanazja", "hints": ["zastrzyk", "ulga", "podpis"] },
+        { "word": "Nagasaki", "hints": ["grzyb", "ciepło", "cień"] },
+        { "word": "Kartel", "hints": ["maczeta", "kamera", "pustynia"] },
+        { "word": "Katar", "hints": ["klimatyzacja", "pieniądze", "robotnicy"] },
+        { "word": "Gaza", "hints": ["gruz", "pomoc", "granica"] },
+        { "word": "Sekta", "hints": ["napój", "wspólnota", "koniec świata"] },
+        { "word": "Przeszczep", "hints": ["lodówka", "motocykl", "kurier"] },
+        { "word": "Krematorium", "hints": ["piec", "urna", "dym"] },
+        { "word": "Przemoc domowa", "hints": ["pas", "zupa", "makijaż"] },
+        { "word": "Porwanie", "hints": ["piwnica", "taśma", "okup"] }
         { "word": "Niemcy", "hints": ["Auta", "Cyklon", "autostrada"] }
 
       ]
     }
+    
   ]
 }
