@@ -36,11 +36,11 @@ body {
 }
 
 #app-root {
-  width: calc(var(--vw) * 100);
-  height: calc(var(--vh) * 100);
+  width: 100vw; /* Zmień z calc(var(--vw) * 100) na 100vw */
+  height: 100vh; /* Zmień z calc(var(--vh) * 100) na 100vh */
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease;
+  overflow-x: hidden; /* KLUCZOWE: zapobiega wychodzeniu poza ekran */
 }
 
 #app-root.wymuszony-obrot {
@@ -335,10 +335,14 @@ body {
   gap: 10px;
   margin-top: auto;
   padding-top: 8px;
+  width: 100%; /* Upewnij się, że rząd zajmuje pełną szerokość */
 }
 
 .btn {
+  /* ZAMIENIAMY width: 100% na poniższe, aby przyciski nie wychodziły poza ekran */
   width: 100%;
+  box-sizing: border-box; /* KLUCZOWE: padding nie zwiększa szerokości przycisku */
+  
   min-height: 54px;
   padding: 14px 20px;
   font-size: 1.05rem;
@@ -347,6 +351,9 @@ body {
   border: none;
   cursor: pointer;
   transition: transform 0.15s, opacity 0.15s;
+  
+  /* Opcjonalne: jeśli nadal ucina, dodaj delikatny margines */
+  margin: 0; 
 }
 
 .btn:active {
