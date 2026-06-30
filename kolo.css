@@ -226,11 +226,13 @@ body {
 
 .tarcza-label {
   font-weight: 800;
-  font-size: clamp(0.85rem, 3.5vw, 1.1rem);
-  line-height: 1.2;
-  padding: 8px 10px;
-  border-radius: 10px;
+  /* Zwiększono zakres: minimalnie 1.2rem, skaluje się mocniej z szerokością ekranu (4.5vw) aż do maks 1.5rem */
+  font-size: clamp(1.2rem, 4.5vw, 1.5rem); 
+  line-height: 1.1;
+  padding: 10px 16px; /* Większy padding da ładniejszą ramkę wokół dużego tekstu */
+  border-radius: 12px;
   text-align: center;
+  letter-spacing: 0.3px; /* Delikatne rozstrzelenie liter ułatwia czytanie dużych napisów */
 }
 
 .tarcza-label.left {
