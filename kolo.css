@@ -217,41 +217,48 @@ body {
 
 .tarcza-etykiety {
   display: flex;
-  justify-content: center; /* Wyśrodkowuje cały zestaw */
-  align-items: center;
-  gap: 12px;
+  justify-content: center;
+  align-items: stretch; /* Ważne: przyciski zawsze będą miały tę samą wysokość */
+  gap: 8px; /* Mniejszy odstęp na telefonach */
   margin-top: 10px;
-  padding: 0 4px;
+  padding: 0 10px;
+  width: 100%;
 }
 
 .tarcza-label {
-  flex: 1; /* Każdy przycisk zajmuje równą część miejsca */
-  min-width: 120px; /* Minimalna szerokość, żeby nie były za małe */
+  flex: 1; 
+  /* Zamiast sztywnego min-width, dajemy max-width, żeby przycisk nie wyjechał poza ekran */
+  max-width: 45%; 
+  
   font-weight: 800;
-  font-size: clamp(1.0rem, 3.5vw, 1.3rem); 
-  line-height: 1.1;
-  padding: 10px 12px;
-  border-radius: 12px;
+  /* Zmniejszamy bazowy rozmiar czcionki dla telefonów */
+  font-size: clamp(0.8rem, 3.5vw, 1.2rem); 
+  
+  padding: 8px 6px; /* Mniej paddingu, żeby tekst się zmieścił */
+  border-radius: 10px;
   text-align: center;
-  letter-spacing: 0.3px;
-  /* Klucz do równej wielkości przy różnych tekstach: */
+  
+  /* KLUCZOWE DLA TELEFONU: */
   display: flex;
   align-items: center;
   justify-content: center;
+  word-wrap: break-word; /* Łamanie długich słów */
+  hyphens: auto;         /* Przenoszenie wyrazów */
+  line-height: 1.1;
 }
 
 .tarcza-label.left {
   background: rgba(0, 173, 181, 0.18);
   color: var(--left);
   border: 2px solid rgba(0, 173, 181, 0.4);
-  justify-self: start;
+  /* Usuwamy justify-self: start; - flex już ustawi to automatycznie */
 }
 
 .tarcza-label.right {
   background: rgba(255, 107, 74, 0.18);
   color: var(--right);
   border: 2px solid rgba(255, 107, 74, 0.4);
-  justify-self: end;
+  /* Usuwamy justify-self: end; - flex już ustawi to automatycznie */
 }
 
 .tarcza-wartosc {
