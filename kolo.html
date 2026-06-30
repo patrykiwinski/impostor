@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Koło / Spectrum</title>
+  <link rel="stylesheet" href="kolo.css" />
+</head>
+<body>
+  <button id="btn-obrot" class="obrot-btn" type="button" aria-label="Wymuś obrót ekranu">🔄</button>
+
+  <div id="app-root">
+    <main class="kolo-app">
+      <div id="ekran-blad" class="error-msg hidden">
+        Brak danych osi w grze.
+        <a href="index.html" class="powrot-link">← Wróć do menu</a>
+      </div>
+
+      <div id="ekran-gry">
+        <header class="kolo-header">
+          <h1>🎡 Koło / Spectrum</h1>
+          <span id="runda-badge" class="runda-badge">Runda 1</span>
+        </header>
+
+        <p id="faza-info" class="faza-info"></p>
+
+        <div id="tarcza-wrap" class="tarcza-wrap">
+          <svg id="tarcza-svg" viewBox="0 0 320 210" aria-label="Miernik spectrum 1–10">
+            <defs>
+              <linearGradient id="tarcza-gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stop-color="#00adb5" />
+                <stop offset="50%" stop-color="#3a3a42" />
+                <stop offset="100%" stop-color="#ff6b4a" />
+              </linearGradient>
+            </defs>
+            <path id="tarcza-luk-tlo" class="tarcza-luk tarcza-luk-tlo" />
+            <path id="tarcza-luk-kolor" class="tarcza-luk tarcza-luk-kolor" />
+            <g id="tarcza-kreski"></g>
+            <g id="tarcza-numery"></g>
+            <line id="igla-cel" class="igla igla-cel" />
+            <line id="igla-partner" class="igla igla-partner" />
+            <circle class="tarcza-srodek" cx="160" cy="175" r="10" />
+          </svg>
+          <div class="tarcza-etykiety">
+            <span id="label-lewy" class="tarcza-label left">—</span>
+            <span id="tarcza-wartosc" class="tarcza-wartosc">5</span>
+            <span id="label-prawy" class="tarcza-label right">—</span>
+          </div>
+        </div>
+
+        <section id="sekcja-akcji" class="sekcja-akcji hidden">
+          <button id="btn-zatwierdz" class="btn btn-primary" type="button">Zatwierdź wynik</button>
+        </section>
+
+        <section id="sekcja-wynik" class="wynik-karta hidden">
+          <p id="wynik-opis" class="wynik-opis"></p>
+          <div class="wynik-szczegoly">
+            <span><i class="kropka kropka-cel"></i> <span id="wynik-cel">Cel Medium: —</span></span>
+            <span><i class="kropka kropka-partner"></i> <span id="wynik-partner">Partner: —</span></span>
+          </div>
+        </section>
+
+        <div class="btn-row">
+          <button id="btn-dalej" class="btn btn-primary" type="button">Dalej / Przekaż telefon</button>
+          <button id="btn-nastepna" class="btn btn-primary hidden" type="button">Następna runda</button>
+        </div>
+
+        <a href="index.html" class="powrot-link">← Wróć do menu</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="kolo.js"></script>
+</body>
+</html>

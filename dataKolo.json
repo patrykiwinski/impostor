@@ -1,0 +1,29 @@
+{
+  "axes": [
+    { "left": "Tanie", "right": "Drogie" },
+    { "left": "Zimne", "right": "Gorące" },
+    { "left": "Ciche", "right": "Głośne" },
+    { "left": "Słodkie", "right": "Słone" },
+    { "left": "Stare", "right": "Nowe" },
+    { "left": "Proste", "right": "Skomplikowane" },
+    { "left": "Lekkie", "right": "Ciężkie" },
+    { "left": "Miękkie", "right": "Twarde" },
+    { "left": "Wolne", "right": "Szybkie" },
+    { "left": "Małe", "right": "Duże" },
+    { "left": "Nudne", "right": "Ekscytujące" },
+    { "left": "Niebezpieczne", "right": "Bezpieczne" },
+    { "left": "Szalone", "right": "Normalne" },
+    { "left": "Niezdrowe", "right": "Zdrowe" },
+    { "left": "Niepopularne", "right": "Popularne" },
+    { "left": "Niesmaczne", "right": "Pyszne" },
+    { "left": "Brzydkie", "right": "Piękne" },
+    { "left": "Trudne", "right": "Łatwe" },
+    { "left": "Mokre", "right": "Suche" },
+    { "left": "Ciemne", "right": "Jasne" },
+    { "left": "Wiejskie", "right": "Miejskie" },
+    { "left": "Formalne", "right": "Casual" },
+    { "left": "Tradycyjne", "right": "Nowoczesne" },
+    { "left": "Samotne", "right": "Towarzyskie" },
+    { "left": "Introwertyczne", "right": "Ekstrawertyczne" }
+  ]
+}
