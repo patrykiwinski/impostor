@@ -1,43 +1,9 @@
-/** Osi gry — edytuj tutaj (dataKolo.json to kopia referencyjna). */
-const OSIE_KOLO = [
-  { left: "Tanie", right: "Drogie" },
-  { left: "Zimne", right: "Gorące" },
-  { left: "Ciche", right: "Głośne" },
-  { left: "Słodkie", right: "Słone" },
-  { left: "Stare", right: "Nowe" },
-  { left: "Proste", right: "Skomplikowane" },
-  { left: "Lekkie", right: "Ciężkie" },
-  { left: "Miękkie", right: "Twarde" },
-  { left: "Wolne", right: "Szybkie" },
-  { left: "Małe", right: "Duże" },
-  { left: "Nudne", right: "Ekscytujące" },
-  { left: "Niebezpieczne", right: "Bezpieczne" },
-  { left: "Szalone", right: "Normalne" },
-  { left: "Niezdrowe", right: "Zdrowe" },
-  { left: "Niepopularne", right: "Popularne" },
-  { left: "Niesmaczne", right: "Pyszne" },
-  { left: "Brzydkie", right: "Piękne" },
-  { left: "Trudne", right: "Łatwe" },
-  { left: "Mokre", right: "Suche" },
-  { left: "Ciemne", right: "Jasne" },
-  { left: "Wiejskie", right: "Miejskie" },
-  { left: "Formalne", right: "Casual" },
-  { left: "Tradycyjne", right: "Nowoczesne" },
-  { left: "Samotne", right: "Towarzyskie" },
-  { left: "Introwertyczne", right: "Ekstrawertyczne" },
-];
+/** Dane ładowane są dynamicznie za pomocą fetch z pliku dataKolo.json */
+let KATEGORIE_GRA = null;
 
-const TARCZA = {
-  cx: 160,
-  cy: 175,
-  promien: 130,
-  promienKreski: 118,
-  promienNumerow: 98,
-  promienIgly: 108,
-};
-
+// Stan gry (Zadeklarowany tylko RAZ)
 const stan = {
-  osie: OSIE_KOLO,
+  osie: [], 
   aktualnaOs: null,
   cel: 0,
   pozycjaPartnera: 5,
@@ -48,6 +14,16 @@ const stan = {
   pointerId: null,
 };
 
+const TARCZA = {
+  cx: 160,
+  cy: 175,
+  promien: 130,
+  promienKreski: 118,
+  promienNumerow: 98,
+  promienIgly: 108,
+};
+
+// Pobieranie elementów DOM
 const appRoot = document.getElementById("app-root");
 const ekranGry = document.getElementById("ekran-gry");
 const ekranBlad = document.getElementById("ekran-blad");
@@ -73,7 +49,35 @@ const btnDalej = document.getElementById("btn-dalej");
 const btnZatwierdz = document.getElementById("btn-zatwierdz");
 const btnNastepna = document.getElementById("btn-nastepna");
 const btnObrot = document.getElementById("btn-obrot");
+const btnPowrot = document.getElementById("btn-powrot");
 
+
+// Nasłuchiwanie na kliknięcie powrotu
+if (btnPowrot) {
+  btnPowrot.addEventListener("click", powrocDoMenu);
+}
+
+// Funkcja cofająca do ekranu startowego z checkboxami
+function powrocDoMenu() {
+  // Resetujemy rundy i osie w stanie gry
+  stan.runda = 0;
+  stan.osie = [];
+  
+  // Ukrywamy ekran gry i ewentualny ekran błędu
+  ekranGry.classList.add("hidden");
+  ekranBlad.classList.add("hidden");
+  
+  // Pokazujemy z powrotem ekran startowy z wyborami kategorii
+  const ekranStartowy = document.getElementById("ekran-startowy");
+  if (ekranStartowy) {
+    ekranStartowy.classList.remove("hidden");
+  }
+  
+  // Opcjonalnie: odświeżamy checkboxy, żeby wyczyścić poprzedni wybór i ustawić domyślny
+  generujPrzyciskiKategorii();
+}
+
+// Inicjalizacja wymiarów i nasłuchiwanie zdarzeń
 ustawWymiaryEkranu();
 window.addEventListener("resize", ustawWymiaryEkranu);
 window.addEventListener("orientationchange", ustawWymiaryEkranu);
@@ -88,16 +92,144 @@ window.addEventListener("pointermove", przeciagaj);
 window.addEventListener("pointerup", zakonczPrzeciaganie);
 window.addEventListener("pointercancel", zakonczPrzeciaganie);
 
+// Uruchomienie aplikacji
 uruchom();
 
 function uruchom() {
-  if (stan.osie.length === 0) {
-    ekranGry.classList.add("hidden");
-    ekranBlad.classList.remove("hidden");
+  zbudujTarcze();
+  
+  // Pobieranie danych z pliku JSON
+  fetch('dataKolo.json')
+    .then(response => {
+      if (!response.ok) throw new Error("Błąd podczas odczytu pliku dataKolo.json");
+      return response.json();
+    })
+    .then(data => {
+      KATEGORIE_GRA = data;
+      generujPrzyciskiKategorii();
+    })
+    .catch(err => {
+      console.error("Błąd bazy danych osi:", err);
+      const kontener = document.getElementById("kontener-kategorii");
+      if (kontener) {
+        kontener.innerHTML = "<p style='color:#ff6b4a; font-weight:bold;'>Błąd CORS / Brak pliku JSON!<br><span style='font-size:0.85rem; color:#87868b; font-weight:normal;'>Otwórz projekt przez serwer (np. Live Server w VS Code) lub wrzuć na hosting.</span></p>";
+      }
+    });
+}
+
+function generujPrzyciskiKategorii() {
+  const kontener = document.getElementById("kontener-kategorii");
+  if (!kontener || !KATEGORIE_GRA) return;
+  
+  kontener.innerHTML = "";
+  const klucze = Object.keys(KATEGORIE_GRA);
+
+  // 1. Kontener na checkboxy
+  const sekcjaCheckboxy = document.createElement("div");
+  sekcjaCheckboxy.style.display = "flex";
+  sekcjaCheckboxy.style.flexDirection = "column";
+  sekcjaCheckboxy.style.gap = "12px";
+  sekcjaCheckboxy.style.marginBottom = "10px";
+  sekcjaCheckboxy.style.textAlign = "left";
+
+  klucze.forEach(klucz => {
+    const label = document.createElement("label");
+    label.style.display = "flex";
+    label.style.alignItems = "center";
+    label.style.gap = "10px";
+    label.style.cursor = "pointer";
+    label.style.fontSize = "1.1rem";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = klucz;
+    checkbox.style.width = "18px";
+    checkbox.style.height = "18px";
+    checkbox.style.cursor = "pointer";
+    
+    // Domyślnie zaznaczamy pierwszą kategorię
+    if (klucz === "ogolne" || klucz === "ogólne") checkbox.checked = true;
+
+    const nazwaWyswietlana = klucz.charAt(0).toUpperCase() + klucz.slice(1);
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(nazwaWyswietlana));
+    sekcjaCheckboxy.appendChild(label);
+  });
+
+  kontener.appendChild(sekcjaCheckboxy);
+
+  // 2. NOWOŚĆ: Mini-pasek z przyciskami "All" oraz "None"
+  const pasekKontrolny = document.createElement("div");
+  pasekKontrolny.style.display = "flex";
+  pasekKontrolny.style.gap = "10px";
+  pasekKontrolny.style.marginBottom = "18px";
+
+  // Przycisk ALL
+  const btnAll = document.createElement("button");
+  btnAll.type = "button";
+  btnAll.textContent = "✓ All";
+  btnAll.style.flex = "1";
+  btnAll.style.padding = "6px 10px";
+  btnAll.style.fontSize = "0.9rem";
+  btnAll.style.cursor = "pointer";
+  btnAll.style.background = "#202024";
+  btnAll.style.color = "#e1e1e6";
+  btnAll.style.border = "1px solid #29292e";
+  btnAll.style.borderRadius = "6px";
+  btnAll.onclick = () => {
+    sekcjaCheckboxy.querySelectorAll("input[type='checkbox']").forEach(cb => cb.checked = true);
+  };
+
+  // Przycisk NONE
+  const btnNone = document.createElement("button");
+  btnNone.type = "button";
+  btnNone.textContent = "✗ None";
+  btnNone.style.flex = "1";
+  btnNone.style.padding = "6px 10px";
+  btnNone.style.fontSize = "0.9rem";
+  btnNone.style.cursor = "pointer";
+  btnNone.style.background = "#202024";
+  btnNone.style.color = "#e1e1e6";
+  btnNone.style.border = "1px solid #29292e";
+  btnNone.style.borderRadius = "6px";
+  btnNone.onclick = () => {
+    sekcjaCheckboxy.querySelectorAll("input[type='checkbox']").forEach(cb => cb.checked = false);
+  };
+
+  pasekKontrolny.appendChild(btnAll);
+  pasekKontrolny.appendChild(btnNone);
+  kontener.appendChild(pasekKontrolny);
+
+  // 3. Główny przycisk startowy
+  const btnStart = document.createElement("button");
+  btnStart.className = "btn btn-primary";
+  btnStart.textContent = "🚀 Uruchom grę";
+  btnStart.onclick = () => {
+    const zaznaczone = Array.from(sekcjaCheckboxy.querySelectorAll("input[type='checkbox']:checked"))
+                            .map(cb => cb.value);
+    wybierzKategorie(zaznaczone);
+  };
+
+  kontener.appendChild(btnStart);
+}
+
+function wybierzKategorie(wybraneKlucze) {
+  stan.osie = [];
+
+  wybraneKlucze.forEach(klucz => {
+    if (KATEGORIE_GRA[klucz]) {
+      stan.osie = stan.osie.concat(KATEGORIE_GRA[klucz]);
+    }
+  });
+
+  if (!stan.osie || stan.osie.length === 0) {
+    alert("Zaznacz przynajmniej jedną kategorię przed rozpoczęciem!");
     return;
   }
 
-  zbudujTarcze();
+  document.getElementById("ekran-startowy").classList.add("hidden");
+  ekranGry.classList.remove("hidden");
+  
   rozpocznijRunde();
 }
 
