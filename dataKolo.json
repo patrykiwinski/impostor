@@ -1,29 +1,63 @@
 {
-  "axes": [
-    { "left": "Tanie", "right": "Drogie" },
-    { "left": "Zimne", "right": "Gorące" },
+  "ogólne": [
+    { "left": "Brzydkie", "right": "Piękne" },
     { "left": "Ciche", "right": "Głośne" },
-    { "left": "Słodkie", "right": "Słone" },
-    { "left": "Stare", "right": "Nowe" },
-    { "left": "Proste", "right": "Skomplikowane" },
+    { "left": "Ciemne", "right": "Jasne" },
+    { "left": "Formalne", "right": "Casual" },
+    { "left": "Małe", "right": "Duże" },
+    { "left": "Nowe", "right": "Stare" },
+    { "left": "Szalone", "right": "Normalne" },
+    { "left": "Tanie", "right": "Drogie" },
+    { "left": "Tradycyjne", "right": "Nowoczesne" }
+  ],
+  "fizyczne": [
+    { "left": "Cienkie", "right": "Grube" },
+    { "left": "Gładkie", "right": "Szorstkie" },
+    { "left": "Kanciaste", "right": "Okrągłe" },
+    { "left": "Krótkie", "right": "Długie" },
     { "left": "Lekkie", "right": "Ciężkie" },
     { "left": "Miękkie", "right": "Twarde" },
-    { "left": "Wolne", "right": "Szybkie" },
-    { "left": "Małe", "right": "Duże" },
-    { "left": "Nudne", "right": "Ekscytujące" },
-    { "left": "Niebezpieczne", "right": "Bezpieczne" },
-    { "left": "Szalone", "right": "Normalne" },
-    { "left": "Niezdrowe", "right": "Zdrowe" },
-    { "left": "Niepopularne", "right": "Popularne" },
-    { "left": "Niesmaczne", "right": "Pyszne" },
-    { "left": "Brzydkie", "right": "Piękne" },
-    { "left": "Trudne", "right": "Łatwe" },
     { "left": "Mokre", "right": "Suche" },
-    { "left": "Ciemne", "right": "Jasne" },
-    { "left": "Wiejskie", "right": "Miejskie" },
-    { "left": "Formalne", "right": "Casual" },
-    { "left": "Tradycyjne", "right": "Nowoczesne" },
+    { "left": "Płaskie", "right": "Wypukłe" },
+    { "left": "Sztywne", "right": "Elastyczne" },
+    { "left": "Tępe", "right": "Ostre" }
+  ],
+  "życie i ludzie": [
+    { "left": "Dla dzieci", "right": "Dla dorosłych" },
+    { "left": "Introwertyczne", "right": "Ekstrawertyczne" },
+    { "left": "Legalne", "right": "Nielegalne" },
+    { "left": "Lokalne", "right": "Globalne" },
+    { "left": "Niebezpieczne", "right": "Bezpieczne" },
+    { "left": "Niepopularne", "right": "Popularne" },
     { "left": "Samotne", "right": "Towarzyskie" },
-    { "left": "Introwertyczne", "right": "Ekstrawertyczne" }
+    { "left": "Stabilne", "right": "Chwiejne" },
+    { "left": "w Dzień", "right": "W nocy" },
+    { "left": "Wiejskie", "right": "Miejskie" }
+  ],
+  "smaki i zapachy": [
+    { "left": "Czyste", "right": "Brudne" },
+    { "left": "Gorzkie", "right": "Kwaśne" },
+    { "left": "Niezdrowe", "right": "Zdrowe" },
+    { "left": "Niesmaczne", "right": "Pyszne" },
+    { "left": "Pachnące", "right": "Śmierdzące" },
+    { "left": "Puste", "right": "Pełne" },
+    { "left": "Płynne", "right": "Stałe" },
+    { "left": "Słodkie", "right": "Słone" },
+    { "left": "Surowe", "right": "Ugotowane" },
+    { "left": "Zimne", "right": "Gorące" }
+  ],
+  "rozgrywka i nauka": [
+    { "left": "Łatwe", "right": "Trudne" },
+    { "left": "Nudne", "right": "Ekscytujące" },
+    { "left": "Proste", "right": "Skomplikowane" },
+    { "left": "Słabe", "right": "Silne" },
+    { "left": "Wolne", "right": "Szybkie" }
+  ],
+  "opinie i koncepty": [
+    { "left": "Niedocenione", "right": "Przereklamowane" },
+    { "left": "Niskie", "right": "Wysokie" },
+    { "left": "Sztuczne", "right": "Naturalne" },
+    { "left": "Wąskie", "right": "Szerokie" },
+    { "left": "Zły pomysł", "right": "Genialny pomysł" }
   ]
 }
