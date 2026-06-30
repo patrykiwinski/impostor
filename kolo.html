@@ -16,7 +16,13 @@
         <a href="index.html" class="powrot-link">← Wróć do menu</a>
       </div>
 
-      <div id="ekran-gry">
+      <div id="ekran-startowy" style="display: flex; flex-direction: column; gap: 14px; justify-content: center; align-items: center; min-height: 50vh; text-align: center;">
+        <h2 style="margin-bottom: 10px;">Wybierz kategorię osi:</h2>
+        
+        <div id="kontener-kategorii" style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 300px;"></div>
+      </div>
+
+      <div id="ekran-gry" class="hidden">
         <header class="kolo-header">
           <h1>🎡 Koło / Spectrum</h1>
           <span id="runda-badge" class="runda-badge">Runda 1</span>
@@ -65,14 +71,14 @@
           <button id="btn-nastepna" class="btn btn-primary hidden" type="button">Następna runda</button>
         </div>
 
+        <center><button id="btn-powrot" class="powrot-link" type="button" style="background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1rem; padding: 10px;">← Wróć do wyboru</button></center>
         <a href="index.html" class="powrot-link">← Wróć do menu</a>
-        <div style="position: absolute; bottom: 12px; right: 16px; font-size: 0.75rem; color: #87868b; opacity: 0.6; font-family: monospace; pointer-events: none;">v1.0.4</div>
-      </div>
+        
+        <div style="position: absolute; bottom: 12px; right: 16px; font-size: 0.75rem; color: #87868b; opacity: 0.6; font-family: monospace; pointer-events: none;">v1.1.6</div>
       </div>
     </main>
   </div>
 
   <script src="kolo.js"></script>
- 
 </body>
 </html>
