@@ -14,25 +14,27 @@
   --primary: #00adb5;
 }
 
-html {
-  width: calc(var(--vw) * 100);
-  height: calc(var(--vh) * 100);
-  overflow: hidden;
+/* Reset i ustawienie bezpiecznego pudełka */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-* {F
-  box-sizing: border-box;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Kluczowe: wycina wszystko co wystaje po prawej */
+  position: relative;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg);
-  color: var(--text);
   min-height: calc(var(--vh) * 100);
-  overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 
 #app-root {
@@ -130,11 +132,10 @@ body {
 /* Półkolista tarcza — obrotomierz */
 .tarcza-wrap {
   position: relative;
-  width: 100%;
-  max-width: 420px;
+  width: 90vw;           /* Zamiast 100%, użyj 90% szerokości ekranu */
+  max-width: 400px;      /* Tarcza nie będzie większa niż 400px */
   margin: 0 auto 12px;
-  user-select: none;
-  -webkit-user-select: none;
+  overflow: hidden;      /* Ukrywa nadmiar */
 }
 
 .tarcza-wrap.interaktywna {
