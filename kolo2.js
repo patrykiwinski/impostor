@@ -18,21 +18,48 @@ fetch('dataKolo.json')
     });
 
 function generujCheckboxy() {
+    // 1. Kontener na checkboxy
+    const sekcjaCheckboxy = document.createElement("div");
+    sekcjaCheckboxy.style.marginBottom = "15px";
+
     Object.keys(KATEGORIE_GRA).forEach(klucz => {
         const label = document.createElement("label");
         label.style.display = "block";
         label.style.marginBottom = "8px";
+        label.style.cursor = "pointer";
         
         const cb = document.createElement("input");
         cb.type = "checkbox";
         cb.value = klucz;
-        cb.checked = true; // Domyślnie zaznaczone
+        cb.checked = (klucz === "ogolne" || klucz === "ogólne"); // Domyślne zaznaczenie
         
         label.appendChild(cb);
-        label.appendChild(document.createTextNode(" " + klucz));
-        kontenerKategorii.appendChild(label);
+        label.appendChild(document.createTextNode(" " + klucz.charAt(0).toUpperCase() + klucz.slice(1)));
+        sekcjaCheckboxy.appendChild(label);
     });
+    kontenerKategorii.appendChild(sekcjaCheckboxy);
 
+    // 2. Pasek kontrolny ALL / NONE
+    const pasekKontrolny = document.createElement("div");
+    pasekKontrolny.style.display = "flex";
+    pasekKontrolny.style.gap = "10px";
+    pasekKontrolny.style.marginBottom = "20px";
+
+    const btnAll = document.createElement("button");
+    btnAll.textContent = "✓ All";
+    btnAll.className = "btn"; // Używamy istniejącej klasy dla stylu
+    btnAll.onclick = () => sekcjaCheckboxy.querySelectorAll("input").forEach(i => i.checked = true);
+    
+    const btnNone = document.createElement("button");
+    btnNone.textContent = "✗ None";
+    btnNone.className = "btn";
+    btnNone.onclick = () => sekcjaCheckboxy.querySelectorAll("input").forEach(i => i.checked = false);
+
+    pasekKontrolny.appendChild(btnAll);
+    pasekKontrolny.appendChild(btnNone);
+    kontenerKategorii.appendChild(pasekKontrolny);
+
+    // 3. Główny przycisk startu
     const btnStart = document.createElement("button");
     btnStart.className = "btn";
     btnStart.textContent = "🚀 Uruchom grę";
