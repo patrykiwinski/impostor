@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koło / Spectrum - Hasła</title>
+  <title>Koło / Spectrum - Fizyczne</title>
   <link rel="stylesheet" href="kolo.css" />
+  <style>
+    .hidden { display: none !important; }
+    #kontener-hasel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      margin: 40px 0;
+      border: 3px solid #00adb5;
+      border-radius: 15px;
+      background: #202024;
+    }
+    .haslo-tekst { font-size: 1.8rem; font-weight: bold; color: #fff; }
+    .btn { padding: 15px 30px; cursor: pointer; border: none; border-radius: 8px; background: #00adb5; color: white; font-size: 1rem; }
+  </style>
 </head>
 <body>
 
@@ -13,30 +28,32 @@
       
       <div id="ekran-startowy">
         <h2>Wybierz kategorię:</h2>
-        <div id="kontener-kategorii"></div>
+        <div id="kontener-kategorii" style="display: flex; flex-direction: column; gap: 10px;">
+          </div>
       </div>
 
       <div id="ekran-gry" class="hidden">
         <header>
           <h1>🎡 Koło / Spectrum</h1>
+          <span id="runda-badge">Runda 1</span>
         </header>
 
-        <div id="kontener-hasel" style="display: flex; justify-content: space-between; padding: 20px; margin: 20px 0; border: 2px solid #ccc; border-radius: 10px;">
-          <div id="haslo-lewe" style="font-size: 1.5rem; font-weight: bold; color: #00adb5;">—</div>
-          <div style="font-weight: bold;">vs</div>
-          <div id="haslo-prawe" style="font-size: 1.5rem; font-weight: bold; color: #ff6b4a;">—</div>
+        <div id="kontener-hasel">
+          <div id="haslo-lewe" class="haslo-tekst">—</div>
+          <div style="color: #87868b;">VS</div>
+          <div id="haslo-prawe" class="haslo-tekst">—</div>
         </div>
 
         <div class="btn-row">
-          <button id="btn-dalej" class="btn btn-primary" type="button">Następne hasło</button>
+          <button id="btn-nastepna" class="btn" type="button">Następna runda</button>
+          <br><br>
+          <button id="btn-powrot" type="button" style="background: none; border: none; color: #87868b; cursor: pointer;">← Wróć do menu</button>
         </div>
-
-        <button id="btn-powrot" class="powrot-link" type="button">← Wróć do wyboru</button>
       </div>
 
     </main>
   </div>
 
-  <script src="kolo.js"></script>
+  <script src="kolo2.js"></script>
 </body>
 </html>
