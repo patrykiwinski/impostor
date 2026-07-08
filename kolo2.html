@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koło / Spectrum - Hasła</title>
+  <link rel="stylesheet" href="kolo.css" />
+</head>
+<body>
+
+  <div id="app-root">
+    <main class="kolo-app">
+      
+      <div id="ekran-startowy">
+        <h2>Wybierz kategorię:</h2>
+        <div id="kontener-kategorii"></div>
+      </div>
+
+      <div id="ekran-gry" class="hidden">
+        <header>
+          <h1>🎡 Koło / Spectrum</h1>
+        </header>
+
+        <div id="kontener-hasel" style="display: flex; justify-content: space-between; padding: 20px; margin: 20px 0; border: 2px solid #ccc; border-radius: 10px;">
+          <div id="haslo-lewe" style="font-size: 1.5rem; font-weight: bold; color: #00adb5;">—</div>
+          <div style="font-weight: bold;">vs</div>
+          <div id="haslo-prawe" style="font-size: 1.5rem; font-weight: bold; color: #ff6b4a;">—</div>
+        </div>
+
+        <div class="btn-row">
+          <button id="btn-dalej" class="btn btn-primary" type="button">Następne hasło</button>
+        </div>
+
+        <button id="btn-powrot" class="powrot-link" type="button">← Wróć do wyboru</button>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="kolo.js"></script>
+</body>
+</html>
