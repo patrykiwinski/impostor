@@ -61,4 +61,13 @@
     { "left": "Wąskie", "right": "Szerokie" },
     { "left": "Zły pomysł", "right": "Genialny pomysł" }
   ]
+  "tt": [
+    { "left": "utalentowani", "right": "Sławni za wygląd" },
+    { "left": "Przyjemne do siedzenie", "right": "nieprzyjemne do siedzenie" },
+    { "left": "Męskie zachowanie", "right": "Damskie zachowanie" },
+    { "left": "Droga potrawa", "right": "Tania potrawa" },
+    { "left": "Zwyczajne powitanie", "right": "Dziwne powitanie" },
+    { "left": "Piosenka na impreze", "right": "Lepiej nie" },
+    { "left": "Nowoczesne imie", "right": "Staromodne imie" }
+  ]
 }
